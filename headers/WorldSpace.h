@@ -7,12 +7,12 @@ public:
 
 	//Hexagonal coordinant system: q + r + s = 0
 	float q;
-	float iq;//"imaginary q", used to fake height
+	float h;//"imaginary q", used to fake height
 	float r;
 	float s;
 
 	//constructor
-	fVector(float _q = 0, float _r = 0, float _s = 0, float _iq = 0) { q = _q; r = _r; s = _s; iq = _iq; }
+	fVector(float _q = 0, float _r = 0, float _s = 0, float _h = 0) { q = _q; r = _r; s = _s; h = _h; }
 
 	//general operators
 
@@ -47,10 +47,19 @@ public:
 	bool validate() { return (q + r + s) == 0; }
 };
 
-class iVector {
+class icVector {
 public:
 	int x;
 	int y;
 
-	iVector(int _x = 0, int _y = 0) { x = _x; y = _y; }
+	icVector(int _x = 0, int _y = 0) { x = _x; y = _y; }
 };
+
+class ihVector{
+	public:
+	int q;
+	int r;
+	int s;
+
+	ihVector(int _q = 0, int _r = 0, int _s =0){q = _q; r = _r; s = _s;}
+}
